@@ -1,0 +1,1 @@
+export const STRATZ_BASE_URL = 'https://api.stratz.com/api/v1';

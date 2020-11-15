@@ -1,6 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
+import routes from '../api';
 import './redis';
 
 export default async ({ app }: { app: express.Application}) => {
@@ -18,4 +19,5 @@ export default async ({ app }: { app: express.Application}) => {
     app.head('/status', (req, res) => res.status(200).end());
 
     app.use(bodyParser.json());
+    app.use(routes());
 };
