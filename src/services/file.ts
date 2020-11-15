@@ -1,4 +1,4 @@
-import fs from 'fs/promises';
+import {writeFile} from 'fs/promises';
 import chalk from 'chalk';
 
 const BASE_LOCATION = __dirname + '/../../static';
@@ -11,7 +11,7 @@ export async function fileStream(filename: string | number, location: Location, 
     const fileLoc = BASE_LOCATION + location + filename + '.json';
 
     try {
-        return fs.writeFile(fileLoc, data, 'utf-8');
+        return writeFile(fileLoc, data, 'utf-8');
     } catch(err) {
         console.log(chalk.red(`Failed to write [${fileLoc}] - err`));
     }
