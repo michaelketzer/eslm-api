@@ -5,7 +5,6 @@ export default (app: Router) => {
     app.use('/', route);
 
     route.get('/', (req: Request, res: Response) => {
-
-    return res.json({ msg: 'Welcome to ESLM Streamdota.com API' }).status(200);
+        return res.json({ msg: 'Welcome to ESLM Streamdota.com API' }).status(200);
     });
 }
